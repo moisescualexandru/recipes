@@ -8,6 +8,18 @@ app.get('/', (req, res) => {
     res.send('Hello World');
 });
 
+app.get('/serach/recipes', (req, res) => {
+    res.send('recipes');
+});
+
+app.post('/login', (req, res) => {
+    res.send('success');
+});
+
+req.post('/recipe', (req, res) => {
+    res.send('success');
+});
+
 app.listen(port, () => {
     console.log(`Example app listening at https://localhost:${port}`);
 });
