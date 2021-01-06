@@ -20,26 +20,28 @@ app.use(upload.array());
 // for sending and catching cookies
 app.use(cookieParser());
 
+// app routes
 app.get('/', (req, res) => {
-    res.send('Hello World');
+	res.send('Hello World');
 });
 
 app.get('/serach/recipes', (req, res) => {
-    res.send('recipes');
+	res.send('recipes');
 });
 
 app.post('/login', (req, res) => {
-    res.send('success');
+	res.send('success');
 });
 
 app.post('/recipe', (req, res) => {
-    res.send('success');
+	res.send('success');
 });
 
 app.post('/new-ingredient', (req, res) => {
-    res.send('success');
+	res.send('success');
 });
 
+// server initializations
 app.listen(port, () => {
-    console.log(`Server app listening at https://localhost:${port}`);
+	console.log(`Server app listening at https://localhost:${port}`);
 });
