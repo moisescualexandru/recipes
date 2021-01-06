@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const upload = multer();
 const app = express();
+require('./db_connection');
+const models = require('./models/models');
 
 // for parsing application/json
 app.use(bodyParser.json());
@@ -30,14 +32,14 @@ app.post('/login', (req, res) => {
     res.send('success');
 });
 
-req.post('/recipe', (req, res) => {
+app.post('/recipe', (req, res) => {
     res.send('success');
 });
 
-req.post('/new-ingredient', (req, res) => {
+app.post('/new-ingredient', (req, res) => {
     res.send('success');
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening at https://localhost:${port}`);
+    console.log(`Server app listening at https://localhost:${port}`);
 });
