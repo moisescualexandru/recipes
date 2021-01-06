@@ -34,6 +34,10 @@ req.post('/recipe', (req, res) => {
     res.send('success');
 });
 
+req.post('/new-ingredient', (req, res) => {
+    res.send('success');
+});
+
 app.listen(port, () => {
     console.log(`Example app listening at https://localhost:${port}`);
 });
