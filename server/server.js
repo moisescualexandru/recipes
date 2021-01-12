@@ -22,7 +22,14 @@ app.use(cookieParser());
 
 // app routes
 app.get('/', (req, res) => {
-	res.send('Hello World');
+	let bestRatedRecipe, randomRecipe;
+	models.recipes.find().where('rating').gt(4).lt(5).exec(() => {
+		bestRatedRecipe = this.sort((recipeOne, recipeTwo) => (recipeOne.rating - recipeTwo.rating))[0];
+	});
+	if (!bestRatedRecipe) {
+		randomRecipe = models.recipes.find()[0];
+	}
+	res.send({ recipe: bestRatedRecipe || randomRecipe });
 });
 
 app.get('/serach/recipes', (req, res) => {
